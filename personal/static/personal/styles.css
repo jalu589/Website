@@ -16,6 +16,10 @@ p {
     right: 0;
 }
 
+.nav-item {
+    margin-right: 15px;
+}
+
 #top {
     height: 250px;
     width: 100%;
@@ -40,7 +44,7 @@ p {
     text-align: center;
 }
 
-#about {
+.about {
     padding: 20px;
     margin-top: 30px;
     display: flex;
@@ -48,13 +52,13 @@ p {
     margin: auto;
 }
 
-#schools {
+.collage {
     max-width: 300px;
     max-height: 300px;
 }
 
-#schools-top,
-#schools-bottom {
+.collage-top,
+.collage-bottom {
     height: 50%;
     width: 100%;
     display: flex;
@@ -65,18 +69,22 @@ p {
     width: 50%;
 }
 
-#description {
+#description,
+#experience {
     max-width: 600px;
     color: dimgray;
+}
+
+#description {
     margin-right: 20px;
+}
+
+#experience {
+    margin-left: 20px;
 }
 
 footer {
     background-color: aquamarine;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     text-align: center;
     margin-top: 15px;
 }
