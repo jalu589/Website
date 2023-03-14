@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+<h2 id="create-header">Create a New Listing</h2>
+<div id="create-box">
+    <div id="create-text">
+        <p id="name-text">Name of item:</p>
+        <p id="description-text">Description:</p>
+        <p id="image-text">Image:</p>
+        <p id="category-text">Category:</p>
+        <p id="bid-text">Starting bid:</p>
+    </div>
+    <div id="create-form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.description }}
+            {{ form.image }}
+            {{ form.category }}
+            {{ form.price }}
+            <input type="hidden" name="lister" value="{{ user.id }}">
+            <input type="submit">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Auctions{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Auctions</h1>
+        <div>
+            {% if user.is_authenticated %}
+                Signed in as <strong>{{ user.username }}</strong>.
+            {% else %}
+                Not signed in.
+            {% endif %}
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'close' %}">Closed Listings</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Clothing/Footwear">
+                            <input type="submit" value="Clothing/Footwear" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Books">
+                            <input type="submit" value="Books" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Electronics">
+                            <input type="submit" value="Electronics" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Cosmetics">
+                            <input type="submit" value="Cosmetics" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Toys">
+                            <input type="submit" value="Toys" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Home/Garden">
+                            <input type="submit" value="Home/Garden" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Sport/Leisure">
+                            <input type="submit" value="Sport/Leisure" class="category">
+                        </form>
+                    </li>
+                    <li>
+                        <form class="dropdown-item" action="category" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category" value="Other">
+                            <input type="submit" value="Other" class="category">
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create' %}">Create Listing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mine' %}">My Listings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'watching' %}">Watchlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+            {% endif %}
+        </ul>
+        <hr>
+        {% block body %}
+        {% endblock %}
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>

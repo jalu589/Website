@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if none %}
+        <h2>{{ none }}</h2>
+    {% else %}
+        <h2>Comment on {{ listing.title }}</h2>
+
+        <div class="big-listing">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img src="{{ listing.image.url }}" class="big-listing-image">
+                {% for comment in listing.comments.all %}
+                <div class="comment">
+                    {{ comment }} - {{ comment.time }}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6 col-md-8 col-sm-8">
+                <div class="big-listing-description">{{ listing.description }}</div>
+                <p class="big-listing-price">Current price: ${{ listing.price }}</p>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.comment }}
+                    <input type="hidden" name="commenter" value="{{ user.id }}">
+                    <input type="hidden" name="item" value="{{ listing.id }}">
+                    <input type="submit" value="Comment" class="listing-button">
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "personal/layout.html" %}
+
+{% block title %}
+Email Project
+{% endblock %}
+
+{% block body %}
+<img class="project-pic" src="static/personal/images/email.jpg" alt="email">
+<p class="project-about">
+    This project is a front-end for an email server that makes API calls to 
+    send and receive emails. The entire app runs on just a single page.
+    All of the links for navigation in the page are actually just buttons
+    that when clicked will run the JavaScript to make the necessary API calls.
+    <br> 
+    To sign you can use any of the following made up accounts:
+    <br>
+    alice@example.com <br>
+    bob@example.com <br>
+    The password for the accounts is password <br>
+    You can also register for your own account with whatever real or made up email
+    of your choice. <br>
+    Once logged in you'll be taken to the inbox page by default. Feel free to compose
+    a message to either of the accounts above.
+    <br>
+    The code for the app can be found <a href="https://github.com/jalu589/mail" target="_blank" rel="noopener noreferrer">here</a>. <br>
+    To view the actual project in action click below. <br>
+    <a href="mail" target="_blank" rel="noopener noreferrer">Check it out</a>
+{% endblock %}

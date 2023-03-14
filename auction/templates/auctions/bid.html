@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if none %}
+        <h2>{{ none }}</h2>
+    {% else %}
+        <h2>Bid on {{ listing.title }}</h2>
+
+        <div class="big-listing">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <img src="{{ listing.image.url }}" class="big-listing-image">
+            </div>
+            <div class="col-lg-6 col-md-8 col-sm-8">
+                <div class="big-listing-description">{{ listing.description }}</div>
+                <p class="big-listing-price">Current price: ${{ listing.price }}</p>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.amount }}
+                    <input type="hidden" name="bidder" value="{{ user.id }}">
+                    <input type="hidden" name="item" value="{{ listing.id }}">
+                    <input type="submit" value="Bid" class="listing-button">
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+{% endblock %}

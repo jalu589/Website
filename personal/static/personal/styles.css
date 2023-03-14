@@ -1,6 +1,8 @@
 body {
     /* background-color: green; */
     font-family: Arial;
+    padding-top: 80px;
+    padding-bottom: 70px;
 }
 
 p {
@@ -20,12 +22,16 @@ p {
     margin-right: 15px;
 }
 
+main {
+    color: dimgray;
+}
+
 #top {
     height: 250px;
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 80px 0px 20px;
+    margin: 0px 0px 20px;
 }
 
 #profile {
@@ -72,7 +78,6 @@ p {
 #description,
 #experience {
     max-width: 600px;
-    color: dimgray;
 }
 
 #description {
@@ -87,8 +92,26 @@ footer {
     background-color: aquamarine;
     text-align: center;
     margin-top: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 footer > a {
     display: block;
 }
+
+.project-pic {
+    max-width: 300px;
+}
+
+#auction-pic {
+    margin-bottom: 50px;
+}
+
+.project-about {
+    max-width: 600px;
+    margin: auto;
+}
+
