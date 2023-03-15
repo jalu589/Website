@@ -15,3 +15,11 @@ def aboutauction(request):
 
 def aboutnetwork(request):
     return render(request, "personal/aboutnetwork.html")
+
+
+def contact(request):
+    return render(request, "personal/contact.html")
+
+
+def resume(request):
+    return render(request, "personal/resume.html")
