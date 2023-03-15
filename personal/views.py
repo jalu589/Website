@@ -11,3 +11,7 @@ def aboutmail(request):
 
 def aboutauction(request):
     return render(request, "personal/aboutauction.html")
+
+
+def aboutnetwork(request):
+    return render(request, "personal/aboutnetwork.html")

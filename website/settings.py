@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'network',
     'widget_tweaks',
     'auction',
     'mail',

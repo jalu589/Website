@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: green; */
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h1 {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+#new-post,
+.post {
+    width: 97%;
+    margin: auto;
+    border: 0.5px solid black;
+    border-radius: 3px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+#new-post {
+    height: 170px;
+}
+
+textarea {
+    width: 100%;
+}
+
+#post-button {
+    padding: 4px 12px;
+}
+
+.post-user {
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+}
+
+.post-content {
+    margin-bottom: 5px;
+    max-height: 70px;
+    overflow: hidden;
+}
+
+.user-follow {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+#follow-button,
+.edit-button,
+.save-button {
+    font-size: 14px;
+    padding: 2px 5px;
+}
+
+#follow-name {
+    margin-bottom: 0px;
+    margin-right: 20px;
+}
+
+.post-bottom {
+    display: flex;
+}
+
+#follow-count {
+    margin-right: 20px;
+}
+
+.like-button {
+    border: none;
+    background-color: white;
+    margin-right: 60px;
+}
+
+.edit-text {
+    display: none;
+}
+
+.save-button {
+    display: none;
+}
