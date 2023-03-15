@@ -5,9 +5,9 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="auctionindex"),
-    path("login", views.login_view, name="login"),
-    path("logout", views.logout_view, name="logout"),
-    path("register", views.register, name="register"),
+    path("login", views.login_view, name="auctionlogin"),
+    path("logout", views.logout_view, name="auctionlogout"),
+    path("register", views.register, name="auctionregister"),
     path("create", views.create, name="create"),
     path("<int:listing_id>", views.listing, name="listing"),
     path("mine", views.mine, name="mine"),

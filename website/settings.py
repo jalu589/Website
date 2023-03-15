@@ -90,7 +90,8 @@ AUTH_USER_MODEL = 'mail.User'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
+print('penis')
+print(MEDIA_ROOT, MEDIA_URL)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
