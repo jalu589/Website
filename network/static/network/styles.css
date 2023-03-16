@@ -4,6 +4,10 @@ body {
     /* background-color: green; */
 }
 
+.navbar {
+    background-color: cornflowerblue;
+}
+
 p {
     margin-top: 0px;
     margin-bottom: 0px;

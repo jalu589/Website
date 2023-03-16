@@ -1,7 +1,17 @@
 /* the following pertains to the layout page */
 
 body {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background-color: green; */
+}
+
+#page-top {
+    background-color: cornflowerblue;
+    padding-left: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 10px;
 }
 
 p {
